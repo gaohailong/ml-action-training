@@ -16,3 +16,16 @@ def calcShannonEnt(dataSet):
         prob = float(labelCounts[key]) / numEntries
         shannonEnt -= prob * log(prob, 2)
     return shannonEnt
+
+
+# 划分数据集
+def spliDataSet(dataSet, axis, value):
+    retDataSet = []
+    for featVec in dataSet:
+        if featVec[axis] == value:
+            reducedFeatVec = featVec[:axis]
+            reducedFeatVec.extend(featVec[axis + 1:])
+            retDataSet.append(reducedFeatVec)
+    return retDataSet
+
+

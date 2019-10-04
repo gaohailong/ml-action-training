@@ -21,7 +21,7 @@ def file2matrix(fileName):
     return returnMat, classLabelVector
 
 
-# 归一化
+# 归一化（公式：newValue = (oldValue-min)/(max-min)）
 def autoNorm(dataset):
     minVals = dataset.min(0)
     maxVals = dataset.max(0)
